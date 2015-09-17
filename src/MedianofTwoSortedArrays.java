@@ -6,9 +6,7 @@ public class MedianofTwoSortedArrays {
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int nums1Longth = nums1.length;
 		int nums2Longth = nums2.length;
-//		double median = 0d;
 		int m1,m2=0;
-
 		int tag = (nums1Longth+nums2Longth)%2;
 
 		m2 = Math.round((nums1Longth + nums2Longth)/2)+1;
@@ -35,7 +33,7 @@ public class MedianofTwoSortedArrays {
 			if (p2==nums2Longth){
 				p1 += m1-1-i;
 				newNums[m1+(1-tag)] = nums2[p2+ (1-tag)];
-				newNums[m1] = nums2[p2];
+				newNums[m1] = nums2[p1];
 				break;
 			}
 			if (nums1[p1] > nums2[p2] ){
