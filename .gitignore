@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 *.class
-
+!.idea/*
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
