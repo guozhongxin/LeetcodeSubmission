@@ -1,3 +1,5 @@
+package LeetCode;
+
 /**
  * Created by guozhongxin on 15/11/5.
  */
