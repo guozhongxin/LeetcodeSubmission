@@ -1,3 +1,5 @@
+package LeetCode;
+
 /**
  * Created by WTI-LIU on 2015/9/8.
  */

@@ -1,3 +1,5 @@
+package LeetCode;
+
 import java.util.HashMap;
 import java.util.Hashtable;
 
@@ -6,9 +8,9 @@ import java.util.Hashtable;
  */
 
 public class TwoSum {
-    /**O(n2) runtime, O(1) space ¨C Brute force:
+    /**O(n2) runtime, O(1) space ï¿½C Brute force:
      * The brute force approach is simple. Loop through each element x
-     * and find if there is another value that equals to target ¨C x.
+     * and find if there is another value that equals to target ï¿½C x.
      * As finding another value requires looping through the rest of array,
      * its runtime complexity is O(n2).
      */
@@ -28,14 +30,14 @@ public class TwoSum {
         }
     }
 
-    /**O(n) runtime, O(n) space ¨C Hash table:
+    /**O(n) runtime, O(n) space ï¿½C Hash table:
      * We could reduce the runtime complexity of looking up a value to O(1)
      * using a hash map that maps a value to its index.
      */
-    /*ÈÝÒ×³ö´íµÄµã£º
-        1. indexºÍÊý×éÐòºÅµÄÇø±ð£¬ÔÚÉÏÃæµÄ³ÌÐòÀïÌåÏÖÔÚiºÍjµÄ+1£¬×îºÃÁ½ÕßÒªÃ´¶¼ÊÇÊý×é±àºÅ£¬ÒªÃ´¶¼ÊÇindex£¬²»Òª¸ãÁ½Ì×
-        2. hashtableºÍhashmapµÄÇø±ð£¡£¡£¡£¡
-        3. ¿¼ÂÇµ½Êý×éÖÐvalueÖµ¿ÉÄÜ³öÏÖÏàÍ¬µÄÇé¿ö£¡£¡
+    /*ï¿½ï¿½ï¿½×³ï¿½ï¿½ï¿½Äµã£º
+        1. indexï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½jï¿½ï¿½+1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÃ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ÒªÃ´ï¿½ï¿½ï¿½ï¿½indexï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        2. hashtableï¿½ï¿½hashmapï¿½ï¿½ï¿½ï¿½ï¿½ð£¡£ï¿½ï¿½ï¿½ï¿½ï¿½
+        3. ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½valueÖµï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public class Solution_2 {
         public int[] twoSum(int[] nums, int target) {
@@ -59,7 +61,7 @@ public class TwoSum {
 
 
     /*
-    ºÏ²¢Á½´ÎÑ­»·
+    ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
      */
     public class Solution_3 {
         public int[] twoSum(int[] nums, int target) {
