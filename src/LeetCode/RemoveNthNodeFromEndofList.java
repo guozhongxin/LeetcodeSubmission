@@ -1,17 +1,12 @@
 package LeetCode;
 
+import utils.ListNode;
+
 /**
  * Created by v-zhoguo on 7/5/2016.
  */
 public class RemoveNthNodeFromEndofList {
 
-     class ListNode {
-         int val;
-         ListNode next;
-         ListNode(int x) {
-             val = x;
-         }
-     }
     public static void main(String[] args){
 
     }

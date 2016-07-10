@@ -1,15 +1,11 @@
 package LeetCode;
 
+import utils.ListNode;
+
 /**
  * Created by v-zhoguo on 7/7/2016.
  */
 public class MergeTwoSortedLists {
-
-    public class ListNode {
-         int val;
-         ListNode next;
-         ListNode(int x) { val = x; }
-    }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
