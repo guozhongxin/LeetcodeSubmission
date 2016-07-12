@@ -1,5 +1,7 @@
 package LeetCode;
 
+import utils.ListNode;
+
 /**
  * Created by guozhongxin on 15/9/7.
  */
@@ -9,11 +11,7 @@ package LeetCode;
 
 
 public class Solution {
-	public static class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-	}
+
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode l,ln1, lnext;
 		int a =0;
