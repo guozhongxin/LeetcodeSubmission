@@ -35,7 +35,8 @@ public class MergeKSortedLists {
         System.out.print(result);
     }
 
-    public static ListNode mergeKLists(ListNode[] lists) {
+    // time limit exceeded
+    public static ListNode mergeKLists_1(ListNode[] lists) {
         ListNode prehead = new ListNode(0);
         prehead.next = lists[0];
         ListNode current_node = prehead;
@@ -71,4 +72,46 @@ public class MergeKSortedLists {
         }while (!empty);
         return  prehead.next;
     }
+
+    // merge sort!  68.9%
+    public static ListNode mergeKLists(ListNode[] lists){
+        if (lists.length==0)
+            return null;
+        return  partition(lists, 0 , lists.length-1);
+    }
+
+    private static ListNode partition(ListNode[] lists, int left, int right) {
+        if (left == right)
+            return lists[left];
+        int middle = (left+right)>>1;
+        ListNode l1 = partition(lists, left, middle);
+        ListNode l2 = partition(lists, middle+1, right);
+        return mergeTwo(l1,l2);
+    }
+
+    private static ListNode mergeTwo(ListNode l1, ListNode l2) {
+        ListNode preHead = new ListNode(0);
+        ListNode head = new ListNode(0);
+        preHead.next = head;
+        while (l1 != null & l2 !=null){
+            int newv = 0;
+            if (l1.val < l2.val){
+                newv  = l1.val;
+                l1 = l1.next;
+            }else {
+                newv = l2.val;
+                l2 = l2.next;
+            }
+            ListNode nextl = new ListNode(newv);
+            head.next = nextl;
+            head = nextl;
+        }
+        if (l1 == null)
+            head.next = l2;
+        if (l2 == null )
+            head.next = l1;
+        return preHead.next.next;
+    }
+
+    //
 }
