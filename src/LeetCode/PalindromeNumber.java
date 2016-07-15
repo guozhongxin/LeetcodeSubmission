@@ -1,3 +1,5 @@
+package LeetCode;
+
 /**
  * Created by dell on 2015/11/26.
  */
