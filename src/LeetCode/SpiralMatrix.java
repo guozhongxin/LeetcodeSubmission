@@ -28,8 +28,27 @@ public class SpiralMatrix {
             res.add(matrix[i][j]);
             j++;
         }
-//        j--;
-//        if (j>=c-)
-//        while (j<=)
+        j--;
+        i++;
+        while (i<=r-1-s){
+            res.add(matrix[i][j]);
+            i++;
+        }
+        i--;
+        j--;
+        if (i>s) {
+            while (j >= s) {
+                res.add(matrix[i][j]);
+                j--;
+            }
+        }
+        j++;
+        i--;
+        if (j<c-1-s) {
+            while (i > s) {
+                res.add(matrix[i][j]);
+                i--;
+            }
+        }
     }
 }

@@ -12,19 +12,66 @@ public class JumpGameII {
         System.out.println(jgii.jump(new int[]{7,0,9,6,9,6,1,7,9,0,1,2,9,0,3}));
     }
 
+    // beats 93.51%
     public int jump(int[] nums){
         int length = nums.length;
-        int step = 0;
-
-        if (length==2){
-            return 1;
-        }
         if (length==1){
             return 0;
         }
+        int steps = 1;
+        int target = length-1;
+        int max = nums[0];
+        int start = 0;
 
+        int premax;
+        while (max<target){
+            premax = max;
+            max = findnextmaxreach(nums,start, max);
+            start = premax;
+            steps++;
+        }
 
-        return step;
+        return steps;
+    }
+
+    private int findnextmaxreach(int[] nums, int start, int max) {
+
+        int nextmax = max;
+        for (int i = start+1; i<=max; i++){
+            if ((i+nums[i])>nextmax){
+                nextmax = i+nums[i];
+            }
+        }
+        return nextmax;
+    }
+
+    //beats 93.5%
+    public int jump_3(int[] nums){
+        int length = nums.length;
+        if (length==1){
+            return 0;
+        }
+        int steps = 1;
+        int maxreach = nums[0];
+        if (maxreach>=length-1){
+            return 1;
+        }
+        int prereach = 0;
+        int currentreache ;
+        for (int i = 1; i< length-1; i++){
+            currentreache = i+ nums[i];
+            if (currentreache> maxreach){
+                if (i>prereach){
+                    steps++;
+                    prereach = maxreach;
+                }
+                maxreach=currentreache;
+                if (maxreach>=length-1){
+                    return steps;
+                }
+            }
+        }
+        return steps;
     }
 
     // beats 2.2%

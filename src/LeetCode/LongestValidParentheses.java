@@ -8,7 +8,7 @@ import java.util.Stack;
 public class LongestValidParentheses {
     public static void main(String[] args){
         LongestValidParentheses lvp = new LongestValidParentheses();
-        System.out.print(lvp.longestValidParentheses("(()()()"));
+        System.out.print(lvp.longestValidParentheses("()"));
     }
     public int longestValidParentheses_1(String s) {
         int length = s.length();
@@ -64,31 +64,43 @@ public class LongestValidParentheses {
     }
 
     public int longestValidParentheses(String s){
+        int length = s.length();
         int max =0;
         int currentl = 0;
-        int last_pop = 0;
+
+        if(length==0){
+            return 0;
+        }
+        int start = 0;
+        int end = length-1;
+        while (s.charAt(start)==')' && start<length-1){
+            start++;
+        }
+        while (s.charAt(end) =='(' && end>0){
+            end--;
+        }
+        if (start > end ) {
+            return 0;
+        }
+
+        int[] sl = new int[length];
         Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i< s.length(); i++){
+        for (int i = start; i<= end; i++){
             char c = s.charAt(i);
             if (c == '('){
                 stack.push(i);
             }else {
                 if (!stack.empty()) {
                     int index = stack.pop();
-                    if (index> last_pop){
+                    currentl = i - index + 1;
+                    if (index != 0) {
+                        currentl +=sl[index-1];
+                    }
+                    sl[i] = currentl;
 
-                    }
-                    currentl = i- index +1+ currentl;
-                    if (stack.empty()){
-//                        l = currentl;
-                    }
-                    if (currentl> max){
+                    if(currentl> max){
                         max = currentl;
                     }
-                    last_pop=index;
-                }else {
-                    currentl = 0;
-//                    last = 0;
                 }
             }
         }
