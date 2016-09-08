@@ -1,7 +1,5 @@
 package LeetCode;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
-
 /**
  * Created by dell on 2016/8/6.
  */
